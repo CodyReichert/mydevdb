@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "No arguments specified. aborting."
+  exit
+fi
+
+if [[ $2 == *-d* ]]; then
+    mysql -u $1 -p -e "DROP DATABASE $3; DROP USER $3@'localhost';"
+    echo "MySQL user and database dropped."
+    exit
+fi
+
+if [[ $1 == *-l* ]]; then
+    mysql -u $2 -p
+    exit
+fi
+
+mysql -u $1 -p -e "CREATE DATABASE $2; \
+                   CREATE USER '$2'@'localhost' IDENTIFIED BY '$2'; \
+                   GRANT ALL PRIVILEGES ON $2.* TO '$2'@'localhost';"
+echo "Mysql user and database '$2' created."

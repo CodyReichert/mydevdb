@@ -1,0 +1,32 @@
+* pgdevdb
+
+`mydevdb` is a bash script for creating mysql databases and users.
+The purpose is to quickly put up new environments on the fly, without needing
+to log into the mysql console. This should really only be used in development.
+
+** Usage
+
+The first argument will always be the user that has privileges to create/delete db's and users,
+
+Create a new user/database combo. Privileges will be given to the new user on the new 
+database, and the user's password will be the same as the user/db name.
+
+    #+BEGIN_SRC bash
+        λ mydevdb root testdb
+    #+END_SRC
+
+To delete the =testdb= user and database we just created, run it with the =-d= flag.
+
+    #+BEGIN_SRC bash
+        λ mydevdb root -d testdb
+    #+END_SRC
+
+To login directly to the mysql console of =testdb=:
+
+    #+BEGIN_SRC bash
+        λ mydevdb -l testdb
+    #+END_SRC
+
+
+** License
+MIT
