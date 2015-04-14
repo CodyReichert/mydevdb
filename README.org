@@ -1,6 +1,6 @@
-* pgdevdb
+* mydevdb
 
-`mydevdb` is a bash script for creating mysql databases and users.
+=mydevdb= is a bash script for creating mysql databases and users.
 The purpose is to quickly put up new environments on the fly, without needing
 to log into the mysql console. This should really only be used in development.
 
