@@ -6,10 +6,12 @@ to log into the mysql console. This should really only be used in development.
 
 ** Usage
 
-The first argument will always be the user that has privileges to create/delete db's and users,
+The first argument will always be the user that has privileges to
+create/delete db's and users. Here it is 'root'.
 
-Create a new user/database combo. Privileges will be given to the new user on the new 
-database, and the user's password will be the same as the user/db name.
+Create a new user/database combo. Privileges will be given to the new
+user on the new database, and the user's password will be the same as
+the user/db name.
 
     #+BEGIN_SRC bash
         λ mydevdb root testdb
